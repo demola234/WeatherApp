@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="54dp"
+    android:drawable="@drawable/cloud_icon">
+
+    <target
+        android:name="cloud_group"
+        android:width="100dp"
+        android:height="54dp"
+        android:animation="@animator/cloud_animation" />
+</animated-vector>
