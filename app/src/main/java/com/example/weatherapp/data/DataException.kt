@@ -14,6 +14,4 @@ class DataException<T, Boolean, E: Exception>  {
         this.loading = loading
         this.e = e
     }
-
-
 }
