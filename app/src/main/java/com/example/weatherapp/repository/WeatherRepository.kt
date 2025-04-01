@@ -3,7 +3,6 @@ package com.example.weatherapp.repository
 import android.util.Log
 import com.example.weatherapp.data.DataException
 import com.example.weatherapp.model.Weather
-import com.example.weatherapp.model.WeatherObject
 import com.example.weatherapp.network.WeatherApi
 import javax.inject.Inject
 

@@ -11,7 +11,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -20,10 +19,7 @@ class AppModule {
     @Provides
     @Singleton
 
-
-
     fun provideOpenWeatherMapApi(): WeatherApi {
-
          val loggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
@@ -31,7 +27,6 @@ class AppModule {
          val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
-
 
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
