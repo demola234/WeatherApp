@@ -62,14 +62,18 @@ fun WeatherTopBar(
         },
         actions = {
             if (isMainScreen) {
-                IconButton(onClick = onButtonClicked) {
+                IconButton(onClick = {
+                    onAddActionClicked.invoke()
+                }) {
                     Icon(
                         imageVector = Icons.Default.Search,
                         tint = Color.White,
                         contentDescription = "Search"
                     )
                 }
-                IconButton(onClick = onAddActionClicked) {
+                IconButton(onClick = {
+                    onButtonClicked.invoke()
+                }) {
                     Icon(
                         imageVector = Icons.Default.MoreVert,
                         tint = Color.White,

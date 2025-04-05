@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.weatherapp.model.Weather
+import com.example.weatherapp.navigation.WeatherScreens
 import com.example.weatherapp.utils.currentDate
 import com.example.weatherapp.utils.formatDateTime
 import com.example.weatherapp.viewModel.WeatherViewModel
@@ -70,6 +71,9 @@ fun MainScreen(navController: NavController, weatherViewModel: WeatherViewModel)
                 WeatherTopBar(
                     title = "${weatherViewModel.data.value.data?.city?.name.toString()}, ${weatherViewModel.data.value.data?.city?.country.toString()}",
                     navController = navController,
+                    onAddActionClicked = {
+                    navController.navigate(WeatherScreens.SearchScreen.name)
+                    }
                 )
             },
             content = { paddingValues ->
@@ -88,7 +92,8 @@ fun MainScreen(navController: NavController, weatherViewModel: WeatherViewModel)
 
 @Composable
 fun MainContent(data: Weather?) {
-    val imageUrl = "https://openweathermap.org/img/wn/${data?.list?.get(0)?.weather?.get(0)?.icon}@2x.png"
+    val imageUrl =
+        "https://openweathermap.org/img/wn/${data?.list?.get(0)?.weather?.get(0)?.icon}@2x.png"
 
     Box(
         modifier = Modifier
